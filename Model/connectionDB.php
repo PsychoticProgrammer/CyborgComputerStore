@@ -2,7 +2,7 @@
     Class Conecction{
         private static  $instanceConnection;
         private $host = "localhost";
-        private $dbname = "pvisual";
+        private $dbname = "patronesproyecto";
         private $username = "root";
         private $password = "";
 

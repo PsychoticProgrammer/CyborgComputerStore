@@ -6,17 +6,15 @@ class SalesProducts
 
     private $productName;
     private $productCost;
-    private $productDescription;
     private $productQuantity;
     //private $lista;
 
 
 
-    public function __construct($productName, $productCost, $productDescription, $productQuantity)
+    public function __construct($productName, $productCost, $productQuantity)
     {
         $this->productName = $productName;
         $this->productCost = $productCost;
-        $this->productDescription = $productDescription;
         $this->productQuantity= $productQuantity;
     }
 
@@ -38,16 +36,6 @@ class SalesProducts
     {
         return $this->productCost;
     }
-
-
-    /**
-     * Get the value of productDescription
-     */ 
-    public function getProductDescription()
-    {
-        return $this->productDescription;
-    }
-
 
     /**
      * Get the value of productQuantity

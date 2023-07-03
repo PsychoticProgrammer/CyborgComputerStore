@@ -6,9 +6,9 @@ $type = $_SERVER["REQUEST_METHOD"];
 
 switch ($type) {
     case 'GET':
-        SalesProductDao::select();
+        //SalesProductDao::select();
         break;
     case 'POST':
-        SalesProductDao::select();
+        //SalesProductDao::select();
         break;
 }
