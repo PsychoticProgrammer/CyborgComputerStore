@@ -1,38 +1,28 @@
 <?php
-    Class Conecction{
-        private static  $instanceConnection;
-        private $host = "localhost";
-        private $dbname = "patronesproyecto";
-        private $username = "root";
-        private $password = "";
+    Class Connection{
+
+        private static  $connection;
+        private static $host = "localhost";
+        private static $dbname = "patronesproyecto";
+        private static $username = "root";
+        private static $password = "";
 
 
-        public function __construct(){
+        private function __construct(){
             
         }
 
-        public function getInstance(){
-            $clsInstance= static::class;
-            if(!isset(self::$instanceConnection)){
-                return self::$instanceConnection = new Conecction();
-            }else{
-                return self::$instanceConnection;
+        public static function getConnection(){
+            if(self::$connection == null){
+                try{
+                    return self::$connection= new PDO('mysql:host=' . self::$host.';dbname=' . self::$dbname, 
+                        self::$username, self::$password);
+                }catch(PDOException $e){
+                    return die("Could not to connect to the database " . self::$dbname . ": " . $e->getMessage());
+                }
             }
-
+            return self::$connection;
         }
-
-        public function getConnection(){
-
-            try{
-                // return $conn = new PDO('mysql:host='.servidor.';dbname='.dbname, user, password, $opciones);
-                return $connection= new PDO('mysql:host='.$this->host.';dbname='.$this->dbname, $this->username, $this->password);
-            }catch(PDOException $e){
-                return die("Could not to connect to the database ".$this->dbname." : ".$e->getMessage());
-            }
-
-        }
-
-
     }
 
 ?>
