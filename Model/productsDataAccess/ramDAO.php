@@ -1,10 +1,8 @@
 <?php 
-    
-    require("../connectionDB.php");
-
     class RAM_DAO{
 
         public static function select(){
+
             $connection = Connection::getConnection();
 
             $sql = 
@@ -17,10 +15,11 @@
 
             $preparedStatement = $connection->prepare($sql);
             if(!$preparedStatement->execute()){
-                die("An error occurred when trying to get Data from RAM table");
+                die("An error occurred when trying to get Data from table");
             }
             $data = $preparedStatement->fetchAll(PDO::FETCH_ASSOC);
             echo json_encode($data);
+            return;
         }
 
         // public static function insert(){

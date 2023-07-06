@@ -1,14 +1,13 @@
 <?php
-
-    include("../Model/Products/ramDAO.php");
+    include_once('../../Model/mysqlConnection.php');
+    include_once('../../Model/productsDataAccess/screenDAO.php');
 
     switch ($_SERVER["REQUEST_METHOD"]) {
         case 'GET':
-            RAM_DAO::select();
+            SCREEN_DAO::select();
             break;
         case 'POST':
             //SalesProductDao::select();
             break;
     }
-
 ?>
