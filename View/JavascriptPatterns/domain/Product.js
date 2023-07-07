@@ -1,3 +1,5 @@
+import { Trademark } from "../trademarks/Trademark.js";
+
 export {Product};
 
 class Product {
@@ -40,7 +42,7 @@ class Product {
         this.#image = image;
     }   
   
-    setCode(trademark){
+    setTrademark(trademark){
         this.#trademark = trademark;
     }   
 

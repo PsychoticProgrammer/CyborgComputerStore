@@ -1,3 +1,5 @@
+import {Product} from "../domain/Product.js";
+import {Trademark} from "../trademarks/Trademark.js";
 export {ProductBuilder};
 
 class ProductBuilder{
@@ -8,13 +10,15 @@ class ProductBuilder{
     constructor(product){
         if(!ProductBuilder.#isPrivateInstantiation){
             throw new Error("Constructor in ProductBuilder is private and cannot be instantiated.");
-            return;
         }
         this.#product = product;
         ProductBuilder.#isPrivateInstantiation = false;
     }
 
     static create(product){
+        if(!(product instanceof Product)){
+            throw new Error("Only a Product implementation is allowed as a parameter of ProductBuilder.create(Product)");
+        }
         ProductBuilder.#isPrivateInstantiation = true;
         return new ProductBuilder(product);
     }
@@ -50,11 +54,14 @@ class ProductBuilder{
 
     image(image){
         this.#product.setImage(image);
-        return image;
+        return this;
     }
 
     trademark(trademark){
+        if(!(trademark instanceof Trademark)){
+            throw new Error("Only a Trademark implementation is allowed as a parameter of ProductBuilder.trademark(Trademark)");  
+        }
         this.#product.setTrademark(trademark);
-        return trademark;
+        return this;
     }
 }

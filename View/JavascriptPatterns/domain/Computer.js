@@ -3,23 +3,26 @@ export {Computer};
 
 class Computer extends Product{
 
-    #components;
+    #products;
 
     constructor(){
         super();
-        this.#components = [];
+        this.#products = [];
     }
 
-    getComponents(){
-        return this.#components;
+    getProducts(){
+        return this.#products;
     }
 
-    setComponents(components){
-        this.#components = components;
+    setProducts(components){
+        this.#products = components;
     }
 
-    addComponent(product){
-        this.#components.push(
+    addProduct(product){
+        if(!(product instanceof Product)){
+            throw new Error("Only a Product implementation is allowed as a parameter of Computer.addProduct(Product)");
+        }
+        this.#products.push(
             {
                 "name" : product.getName(),
                 "product" : product
@@ -27,11 +30,10 @@ class Computer extends Product{
         );
     }
 
-    removeComponent(productName){
-        productName = productName.toUpperCase();
-        for(let i = 0; i < this.#components.length; i++){
-            if(this.#components[i].name == productName){
-                this.#components.splice(i,1);
+    removeProduct(productCode){
+        for(let i = 0; i < this.#products.length; i++){
+            if(this.#products[i].getCode() == productCode){
+                this.#products.splice(i,1);
             }
         }
     }
