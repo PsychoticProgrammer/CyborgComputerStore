@@ -1,0 +1,172 @@
+			---- SQL -----
+	---Trademarks
+
+INSERT INTO TRADEMARKS VALUES(null,'Asus','Eventualmente Cambiar en Produccion');
+INSERT INTO TRADEMARKS VALUES(null,'Dell','Eventualmente Cambiar en Produccion');
+INSERT INTO TRADEMARKS VALUES(null,'Nvidia','Eventualmente Cambiar en Produccion');
+INSERT INTO TRADEMARKS VALUES(null,'AMD','Eventualmente Cambiar en Produccion');
+INSERT INTO TRADEMARKS VALUES(null,'Intel','Eventualmente Cambiar en Produccion');
+
+	---PRODUCTS
+
+--CADA PRODUCTO CUENTA CON UN NOMBRE, QUE ES EL NOMBRE DEL PRODUCTO EN MAYÚSCULAS
+--POR EJEMPLO, UNA "ram", TIENE NOMBRE "RAM", UN "case" ES DE NOMBRE "CASE". 
+--ESTE ES UN ATRIBUTO QUE POR NADA DEBE SER MODIFICADO, TODOS LOS DEMÁS SE PUEDEN CAMBIAR
+--EL NOMBRE SE UTILIZA COMO ESTÁ EN BASTANTE DEL PROGRAMA NO MODIFICARLO. 
+--EL RESTO, CADA PRODUCTO TIENE ENTRE PARÉNTESIS LOS NOMBRES DE LOS CAMPOS QUE VA A INSERTAR, NO 
+--CAMBIAR ESO, SIMPLEMENTE ALTERAR LOS VALORES DENTRO DE VALUES(), PORQUE COMO VEN. ES UNA SOLA TABLA, QUE 
+--TIENE PROPIEDADES AGRUPADAS POR EL TIPO DE DATO, MAS NO POR EL NOMBRE DE LA PROPIEDAD EN SI. 
+
+		---RAM
+
+INSERT INTO PRODUCTS(code, name, model, price, description, image, trademark, size) 
+VALUES(null,'RAM','ram-1',150.00,'Tarjeta con algoritmos para la gestion de la informacion del procedador',
+'http://url-very-important',1,4);
+
+INSERT INTO PRODUCTS(code, name, model, price, description, image, trademark, size) 
+VALUES(null,'RAM','ram-2',150.00,'Tarjeta con algoritmos para la gestion de la informacion del procedador',
+'http://url-very-important',2,8);
+
+INSERT INTO PRODUCTS(code, name, model, price, description, image, trademark, size) 
+VALUES(null,'RAM','ram-3',150.00,'Tarjeta con algoritmos para la gestion de la informacion del procedador',
+'http://url-very-important',3,4);
+
+INSERT INTO PRODUCTS(code, name, model, price, description, image, trademark, size) 
+VALUES(null,'RAM','ram-3',150.00,'Tarjeta con algoritmos para la gestion de la informacion del procedador',
+'http://url-very-important',1,8);
+
+		---CASE
+
+INSERT INTO PRODUCTS(code, name, model, price, description, image, trademark, unique_char) 
+VALUES(null,'CASE','case-1',150.00,'Carcasa diseñada para una correcta ventilación',
+'http://url-very-important',2,"Rojo");
+
+INSERT INTO PRODUCTS(code, name, model, price, description, image, trademark, unique_char) 
+VALUES(null,'CASE','case-2',150.00,'Carcasa diseñada para una correcta ventilación',
+'http://url-very-important',3,"Negro");
+
+INSERT INTO PRODUCTS(code, name, model, price, description, image, trademark, unique_char) 
+VALUES(null,'CASE','case-3',150.00,'Carcasa diseñada para una correcta ventilación',
+'http://url-very-important',5,"Blanco");
+
+INSERT INTO PRODUCTS(code, name, model, price, description, image, trademark, unique_char) 
+VALUES(null,'CASE','case-4',150.00,'Carcasa diseñada para una correcta ventilación',
+'http://url-very-important',1,"Plata");
+
+		---MOTHER_BOARD
+
+INSERT INTO PRODUCTS(code, name, model, price, description, image, trademark, unique_char) 
+VALUES(null,'MOTHER BOARD','mb-1',150.00,'Placa madre con una compatibilidad elevada en el bus de datos',
+'http://url-very-important',1,"Quinta");
+
+INSERT INTO PRODUCTS(code, name, model, price, description, image, trademark, unique_char) 
+VALUES(null,'MOTHER BOARD','mb-2',150.00,'Placa madre con una compatibilidad elevada en el bus de datos',
+'http://url-very-important',1,"Quinta");
+
+INSERT INTO PRODUCTS(code, name, model, price, description, image, trademark, unique_char) 
+VALUES(null,'MOTHER BOARD','mb-3',150.00,'Placa madre con una compatibilidad elevada en el bus de datos',
+'http://url-very-important',1,"Quinta");
+
+INSERT INTO PRODUCTS(code, name, model, price, description, image, trademark, unique_char) 
+VALUES(null,'MOTHER BOARD','mb-4',150.00,'Placa madre con una compatibilidad elevada en el bus de datos',
+'http://url-very-important',1,"Quinta");
+
+		---PROCESSOR
+
+INSERT INTO PRODUCTS(code, name, model, price, description, image, trademark, cycles) 
+VALUES(null,'PROCESSOR','processor-1',150.00,'Procesador de alta fidelidad con 4 nucleos y 8 hilos',
+'http://url-very-important',4,3.20);
+
+INSERT INTO PRODUCTS(code, name, model, price, description, image, trademark, cycles) 
+VALUES(null,'PROCESSOR','processor-2',150.00,'Procesador de alta fidelidad con 4 nucleos y 8 hilos',
+'http://url-very-important',5,3.20);
+
+INSERT INTO PRODUCTS(code, name, model, price, description, image, trademark, cycles) 
+VALUES(null,'PROCESSOR','processor-3',150.00,'Procesador de alta fidelidad con 8 nucleos y 12 hilos',
+'http://url-very-important',4,3.20);
+
+INSERT INTO PRODUCTS(code, name, model, price, description, image, trademark, cycles) 
+VALUES(null,'PROCESSOR','processor-4',150.00,'Procesador de alta fidelidad con 8 nucleos y 12 hilos',
+'http://url-very-important',5,3.20);
+
+		---GRAPHIC CARD
+
+INSERT INTO PRODUCTS(code, name, model, price, description, image, trademark, size) 
+VALUES(null,'GRAPHIC CARD','graphic-1',150.00,'Tarjeta de Video con alta capacidad para el Ray tracing',
+'http://url-very-important',4,8);
+
+INSERT INTO PRODUCTS(code, name, model, price, description, image, trademark, size) 
+VALUES(null,'GRAPHIC CARD','graphic-1',150.00,'Tarjeta de Video con alta capacidad para el Ray tracing',
+'http://url-very-important',3,8);
+
+INSERT INTO PRODUCTS(code, name, model, price, description, image, trademark, size) 
+VALUES(null,'GRAPHIC CARD','graphic-1',150.00,'Tarjeta de Video con alta capacidad para el Ray tracing',
+'http://url-very-important',4,4);
+
+INSERT INTO PRODUCTS(code, name, model, price, description, image, trademark, size) 
+VALUES(null,'GRAPHIC CARD','graphic-1',150.00,'Tarjeta de Video con alta capacidad para el Ray tracing',
+'http://url-very-important',3,4);
+
+		---KEYBOARD
+
+INSERT INTO PRODUCTS(code, name, model, price, description, image, trademark, unique_char) 
+VALUES(null,'KEYBOARD','key-1',15.00,'Teclado de alta fidelidad',
+'http://url-very-important',1,"Tipo");
+
+INSERT INTO PRODUCTS(code, name, model, price, description, image, trademark, unique_char) 
+VALUES(null,'KEYBOARD','key-2',15.00,'Teclado de alta fidelidad',
+'http://url-very-important',2,"Tipo");
+
+		---MOUSE
+
+INSERT INTO PRODUCTS(code, name, model, price, description, image, trademark, unique_char) 
+VALUES(null,'MOUSE','mouse-1',15.00,'Raton gamer con regulacion de los dpi',
+'http://url-very-important',1,"TRUE");
+
+INSERT INTO PRODUCTS(code, name, model, price, description, image, trademark, unique_char) 
+VALUES(null,'MOUSE','mouse-2',15.00,'Raton gamer con regulacion de los dpi',
+'http://url-very-important',2,"TRUE");
+
+		---SCREEN
+
+INSERT INTO PRODUCTS(code, name, model, price, description, image, trademark, size) 
+VALUES(null,'SCREEN','screen-1',150.00,'Pantalla en alta resolucion con 500 nits',
+'http://url-very-important',1,24);
+
+INSERT INTO PRODUCTS(code, name, model, price, description, image, trademark, size) 
+VALUES(null,'SCREEN','screen-2',150.00,'Pantalla en alta resolucion con 500 nits',
+'http://url-very-important',2,20);
+
+		---SPEAKERS
+
+INSERT INTO PRODUCTS(code, name, model, price, description, image, trademark, size) 
+VALUES(null,'SPEAKERS','speakers-1',15.00,'Parlantes capaces de reproducir bajos perfectamente audibles',
+'http://url-very-important',1,500);
+
+INSERT INTO PRODUCTS(code, name, model, price, description, image, trademark, size) 
+VALUES(null,'SPEAKERS','speakers-1',15.00,'Parlantes capaces de reproducir bajos perfectamente audibles',
+'http://url-very-important',2,600);
+
+		---COMPUTERS
+	---No se olviden que la compu es un producto también, así que debe constar en la tabla de productos, si van a agregar una nueva compu
+
+INSERT INTO PRODUCTS(code, name, model, price, description, image, trademark)
+VALUES(null,'COMPUTER','computer-1',1300.00,'Computadora muy fina','http://url-very-important',2);
+
+INSERT INTO PRODUCTS(code, name, model, price, description, image, trademark)
+VALUES(null,'COMPUTER','computer-2',1300.00,'Computadora muy fina','http://url-very-important',1);
+
+		---COMPUTERS MIDDLE TABLE
+	---En esta tabla solo se colocan claves primarias del producto computadora, y de los componentes que la conforman
+
+INSERT INTO COMPUTERS VALUES(1,1);
+INSERT INTO COMPUTERS VALUES(1,5);
+INSERT INTO COMPUTERS VALUES(1,9);
+INSERT INTO COMPUTERS VALUES(1,13);
+INSERT INTO COMPUTERS VALUES(1,17);
+
+INSERT INTO COMPUTERS VALUES(2,2);
+INSERT INTO COMPUTERS VALUES(2,6);
+INSERT INTO COMPUTERS VALUES(2,10);
+INSERT INTO COMPUTERS VALUES(2,14);
+INSERT INTO COMPUTERS VALUES(2,18);
