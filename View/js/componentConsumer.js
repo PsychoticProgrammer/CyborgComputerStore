@@ -1,10 +1,8 @@
 import {Ram} from "../JavascriptPatterns/domain/components/Ram.js";
 import {Case} from "../JavascriptPatterns/domain/components/Case.js";
-import {ProductBuilder} from "../JavascriptPatterns/builder/ProductBuilder.js";
 import { MotherBoard } from "../JavascriptPatterns/domain/components/MotherBoard.js";
 import { Processor } from "../JavascriptPatterns/domain/components/Processor.js";
 import { GraphicCard } from "../JavascriptPatterns/domain/components/GraphicCard.js";
-import { TrademarkConsumer } from "./trademarkConsumer.js";
 import { BuilderDirector } from "../JavascriptPatterns/builder/BuilderDirector.js";
 export {ComponentConsumer};
 
@@ -26,16 +24,6 @@ class ComponentConsumer{
         }
         return null;
     }
-    
-    // static async setCommonProperties(builder,data){
-    //     if(!(builder instanceof ProductBuilder)){
-    //         throw new Error("Only a ProductBuilder implementation can be passed as parameter in setCommonProperties(Product)");
-    //     }
-    //     return builder.code(data[i].code).name(data[i].name).
-    //     model(data[i].model).price(data[i].price).
-    //     description(data[i].description).image(data[i].image).
-    //     trademark(await TrademarkConsumer.findTrademark(data[i].trademarkName)).build()
-    // } 
 
     static async getRam(){
         let data = await ComponentConsumer.consumeService("ramRest.php");

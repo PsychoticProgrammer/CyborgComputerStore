@@ -3,18 +3,18 @@ export {Keyboard};
 
 class Keyboard extends Product{
 
-    #type;
+    type;
 
     constructor(type){
         super();
-        this.#type = type;
+        this.type = type;
     }
 
     setType(type){
-        this.#type = type;
+        this.type = type;
     }
 
     getType(){
-        return this.#type;
+        return this.type;
     }
 }

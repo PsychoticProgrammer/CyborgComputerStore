@@ -3,18 +3,25 @@ export {GraphicCard};
 
 class GraphicCard extends Product{
 
-    #size;
+    size;
 
     constructor(size){
         super();
-        this.#size = size;
+        this.size = size;
     }
 
     setSize(size){
-        this.#size = size;
+        this.size = size;
     }
 
     getSize(){
-        return this.#size;
+        return this.size;
+    }
+
+    serializeProduct(){
+        return `
+            ${super.serializeProduct()}
+            "#size" : ${this.size}
+        }`;
     }
 }

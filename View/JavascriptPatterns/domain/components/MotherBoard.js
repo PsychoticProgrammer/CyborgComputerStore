@@ -3,18 +3,25 @@ export {MotherBoard};
 
 class MotherBoard extends Product{
 
-    #gen;
+    gen;
 
     constructor(gen){
         super();
-        this.#gen = gen;
+        this.gen = gen;
     }
 
     setGen(gen){
-        this.#gen = gen;
+        this.gen = gen;
     }
 
     getGen(){
-        return this.#gen;
+        return this.gen;
+    }
+
+    serializeProduct(){
+        return `
+            ${super.serializeProduct()}
+            "#gen" : "${this.gen}"
+        }`;
     }
 }

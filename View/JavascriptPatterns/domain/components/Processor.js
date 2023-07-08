@@ -3,18 +3,25 @@ export {Processor};
 
 class Processor extends Product{
 
-    #cycles;
+    cycles;
 
     constructor(cycles){
         super();
-        this.#cycles = cycles;
+        this.cycles = cycles;
     }
 
     setCycles(cycles){
-        this.#cycles = cycles;
+        this.cycles = cycles;
     }
 
     getCycles(){
-        return this.#cycles;
+        return this.cycles;
+    }
+
+    serializeProduct(){
+        return `
+            ${super.serializeProduct()}
+            "#cycles" : ${this.cycles}
+        }`;
     }
 }

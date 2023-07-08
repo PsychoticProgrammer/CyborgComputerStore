@@ -4,18 +4,25 @@ export {Case};
 
 class Case extends Product{
 
-    #color;
+    color;
 
     constructor(color){
         super();
-        this.#color = color;
+        this.color = color;
     }
 
     setColor(color){
-        this.#color = color;
+        this.color = color;
     }
 
     getColor(){
-        return this.#color;
+        return this.color;
+    }
+
+    serializeProduct(){
+        return `
+            ${super.serializeProduct()}
+            "#color" : "${this.color}"
+        }`;
     }
 }

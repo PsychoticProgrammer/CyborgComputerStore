@@ -9,10 +9,6 @@ import { ComponentConsumer } from "./componentConsumer.js";
 
 export{ComputerConsumer}
 
-window.onload = async function(){
-    console.log(await ComputerConsumer.getComputers());
-}
-
 class ComputerConsumer{
     
     static async getComputers(){
@@ -33,9 +29,9 @@ class ComputerConsumer{
             case "RAM":
                 return await BuilderDirector.buildProduct(new Ram(data.size),data);
             case "CASE":
-                return await BuilderDirector.buildProduct(new Case(data.color),data);
+                return await BuilderDirector.buildProduct(new Case(data.textProperty),data);
             case "MOTHER BOARD":
-                return await  BuilderDirector.buildProduct(new MotherBoard(data.gen),data);
+                return await  BuilderDirector.buildProduct(new MotherBoard(data.textProperty),data);
             case "GRAPHIC CARD":
                 return await  BuilderDirector.buildProduct(new GraphicCard(data.size),data);
             case "PROCESSOR":

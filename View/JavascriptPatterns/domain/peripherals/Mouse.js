@@ -3,18 +3,18 @@ export {Mouse};
 
 class Mouse extends Product{
 
-    #isWireless;
+    isWireless;
 
     constructor(isWireless){
         super();
-        this.#isWireless = isWireless;
+        this.isWireless = isWireless;
     }
 
     setIsWireless(isWireless){
-        this.#isWireless = isWireless;
+        this.isWireless = isWireless;
     }
 
-    isWireless(){
-        return this.#isWireless;
+    getIsWireless(){
+        return this.isWireless;
     }
 }

@@ -3,18 +3,18 @@ export {Speakers};
 
 class Speakers extends Product{
 
-    #power;
+    power;
 
     constructor(power){
         super();
-        this.#power = power;
+        this.power = power;
     }
 
     setPower(power){
-        this.#power = power;
+        this.power = power;
     }
 
     getPower(){
-        return this.#power;
+        return this.power;
     }
 }

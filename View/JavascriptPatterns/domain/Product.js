@@ -4,73 +4,85 @@ export {Product};
 
 class Product {
 
-    #code;
-    #name;
-    #model;
-    #price;
-    #description;
-    #image;
-    #trademark;
+    code;
+    name;
+    model;
+    price;
+    description;
+    image;
+    trademark;
 
     constructor() {
       if (this.constructor == Product) {
         throw new Error("Product is Abstract and cannot be instantiated.");
       }
     }
+
+    serializeProduct(){
+        return `{
+          "#code" : ${this.code},
+          "#name" : "${this.name}",
+          "#model" : "${this.model}",
+          "#price" : ${this.price},
+          "#description" : "${this.description}",
+          "#image" : "${this.image}",
+          "#trademark" : ${this.trademark.serializeTrademark()},
+          `;    
+    }
   
     setCode(code){
-        this.#code = code;
+        this.code = code;
     }   
   
     setName(name){
-        this.#name = name;
+        this.name = name;
     }   
   
     setModel(model){
-        this.#model = model;
+        this.model = model;
     }   
   
     setPrice(price){
-        this.#price = price;
+        this.price = price;
     }   
   
     setDescription(description){
-        this.#description = description;
+        this.description = description;
     }   
   
     setImage(image){
-        this.#image = image;
+        this.image = image;
     }   
   
     setTrademark(trademark){
-        this.#trademark = trademark;
+        this.trademark = trademark;
     }   
 
     getCode() {
-      return this.#code;
+      return this.code;
     }
 
     getName() {
-      return this.#name;
+      return this.name;
     }
 
     getModel() {
-      return this.#model;
+      return this.model;
     }
 
     getPrice() {
-      return this.#price;
+      return this.price;
     }
 
     getDescription() {
-      return this.#description;
+      return this.description;
     }
 
     getImage() {
-      return this.#image;
+      return this.image;
     }
 
     getTrademark() {
-      return this.#trademark;
+      return this.trademark;
     }
 }
