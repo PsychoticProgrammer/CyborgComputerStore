@@ -6,7 +6,7 @@ export {BuilderDirector};
 
 class BuilderDirector{
 
-    static async  buildProduct(productInstance,data){
+    static async buildProduct(productInstance,data){
         if(!(productInstance instanceof Product)){
             throw new Error("Only a Product implementation can be passed as parameter in buildProduct(Product)");
         }

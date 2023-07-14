@@ -1,7 +1,9 @@
 <?php
 
-include("../Model/personDao.php");
-include("../Model/person.php");
+include("../../Model/personDao.php");
+include("../../Model/person.php");
+// include("../Model/personDao.php");
+// include("../Model/person.php");
 $type= $_SERVER["REQUEST_METHOD"];
 
 switch($type){

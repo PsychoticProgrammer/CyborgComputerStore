@@ -45,6 +45,7 @@ function addComponentsCards(components,targetSection){
                   </div>
                 </div>
             </div>`;
+            console.log(currentProduct.getImage());
         }
     }
 }

@@ -1,0 +1,39 @@
+/*#modalMethodPayment {
+    background-color: black;
+    color: white;
+  }*/
+
+#modalMethodPayment .modal-content {
+    background-color: #27292a; 
+    border: none;
+}
+
+#modalMethodPayment .modal-header {
+    background-color: #1f2122;
+    border-bottom: none;
+}
+
+#modalMethodPayment .modal-footer {
+    background-color: #27292a;
+    border-top: none;
+}
+
+#modalMethodPayment .modal-title {
+    color: white;
+}
+
+#modalMethodPayment .modal-body p {
+    color: white;
+}
+
+#modalMethodPayment .modal-body .form-group {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    width: 200px;
+    height: 100%;
+}
+
+#modalMethodPayment .modal-body .form-group:hover {
+    background-color: #2f3436;
+}

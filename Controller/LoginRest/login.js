@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var xhr = new XMLHttpRequest();
 
         // URL del endpoint o servicio
-        var url = 'http://empresa.com/cyborg-1.0.0/Controller/RestPerson.php';
+        var url = 'http://localhost/PatternsProject/Controller/LoginRest/RestPerson.php';
 
         var formData = new FormData();
         formData.append('username', username)
@@ -54,10 +54,19 @@ document.addEventListener('DOMContentLoaded', function () {
             if (xhr.status === 200) {
                 // La solicitud se completó con éxito
                 var response = xhr.responseText.includes('SQLSTATE[23000]');
-                userExist.innerText+="El usuario ya existe";
-                setTimeout(function(){
-                    userExist.innerText="";
-                }, 2000);
+                if(!response){
+                    userExist.innerText+="Usuario agregado exitosamente";
+                    setTimeout(function(){
+                        userExist.innerText="";
+                    }, 2000);
+                    
+                }else{
+
+                    userExist.innerText+="El usuario ya existe";
+                    setTimeout(function(){
+                        userExist.innerText="";
+                    }, 2000);
+                }
 
             } else {
                 // Hubo un error en la solicitud
@@ -78,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var xhr = new XMLHttpRequest();
 
         // URL del endpoint o servicio
-        var url = 'http://empresa.com/cyborg-1.0.0/Controller/RestPerson.php?username='+username+"&pwd="+password;
+        var url = 'http://localhost/PatternsProject/Controller/LoginRest/RestPerson.php?username='+username+"&pwd="+password;
 
         // Configurar la solicitud
         xhr.open('GET', url, true);
@@ -90,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 var response = JSON.parse(xhr.responseText);
                 console.log(response);
                 if(response >= 1){
-
+                    createSession();
                     window.location.href = "index.html";
                     window.close();
                 }else{
@@ -108,6 +117,11 @@ document.addEventListener('DOMContentLoaded', function () {
         // Enviar la solicitud con los datos en el cuerpo
         xhr.send();
     }
+
+    function createSession(){
+        sessionStorage.setItem('variableDeSession', 'administrador');
+    }
+
 
 });
 
