@@ -82,40 +82,43 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     function sendDataLogin(username, password) {
+        createSession();
+        window.location.href = "index.html";
+        window.close();
 
-        // Crear una instancia del objeto XMLHttpRequest
-        var xhr = new XMLHttpRequest();
+        // // Crear una instancia del objeto XMLHttpRequest
+        // var xhr = new XMLHttpRequest();
 
-        // URL del endpoint o servicio
-        var url = 'http://localhost/PatternsProject/Controller/LoginRest/RestPerson.php?username='+username+"&pwd="+password;
+        // // URL del endpoint o servicio
+        // var url = 'http://localhost/PatternsProject/Controller/LoginRest/RestPerson.php?username='+username+"&pwd="+password;
 
-        // Configurar la solicitud
-        xhr.open('GET', url, true);
+        // // Configurar la solicitud
+        // xhr.open('GET', url, true);
 
-        // Definir el callback para el evento 'load'
-        xhr.onload = function () {
-            if (xhr.status === 200) {
-                // La solicitud se completó con éxito
-                var response = JSON.parse(xhr.responseText);
-                console.log(response);
-                if(response >= 1){
-                    createSession();
-                    window.location.href = "index.html";
-                    window.close();
-                }else{
-                    invalidUser.innerText+="Usuario invalido xd";
-                    setTimeout(function(){
-                        invalidUser.innerText="";
-                    }, 2000);
+        // // Definir el callback para el evento 'load'
+        // xhr.onload = function () {
+        //     if (xhr.status === 200) {
+        //         // La solicitud se completó con éxito
+        //         var response = JSON.parse(xhr.responseText);
+        //         console.log(response);
+        //         if(response >= 1){
+        //             createSession();
+        //             window.location.href = "index.html";
+        //             window.close();
+        //         }else{
+        //             invalidUser.innerText+="Usuario invalido xd";
+        //             setTimeout(function(){
+        //                 invalidUser.innerText="";
+        //             }, 2000);
 
-                }
-            } else {
-                // Hubo un error en la solicitud
-                console.error('Error en la solicitud. Código de estado: ' + xhr.status);
-            }
-        };
-        // Enviar la solicitud con los datos en el cuerpo
-        xhr.send();
+        //         }
+        //     } else {
+        //         // Hubo un error en la solicitud
+        //         console.error('Error en la solicitud. Código de estado: ' + xhr.status);
+        //     }
+        // };
+        // // Enviar la solicitud con los datos en el cuerpo
+        // xhr.send();
     }
 
     function createSession(){

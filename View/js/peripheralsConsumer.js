@@ -25,6 +25,7 @@ class PeripheralsConsumer{
                     await BuilderDirector.buildProduct(new Keyboard(data[i].type), data[i])
             );
         }
+        console.log(products);
         return products;
     }
 
